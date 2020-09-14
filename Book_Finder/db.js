@@ -1,6 +1,6 @@
 const pg = require('pg');
 
-const connectionString = 'postgres://postgres:SLUbook!1@bookfinder.c81m81drtua2.us-east-1.rds.amazonaws.com:5432/postgres'
+const connectionString = ''
     const runSelectQuery = async (queryhere, params = []) => {
 
         this.pool = new pg.Pool({

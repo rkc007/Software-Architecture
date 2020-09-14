@@ -7,34 +7,38 @@ const {
     getFirstName,
     getLastName,
     getBookId,
-    getTitle
+    getTitle,
+    updateBooks,
+    addSingleBook
 
   } = require("../controller");
 
 router.get('/all', async function(req, res, next) {
     const value = res.json(await getAllBooks(req.query.id));
-    // res.json(rows);
 });
 
 router.get('/firstname', async function(req, res, next) {
     const value = res.json(await getFirstName(req.query.id));
-    // res.json(rows);
 });
 
 router.get('/lastname', async function(req, res, next) {
     const value = res.json(await getLastName(req.query.id));
-    // res.json(rows);
 });
 
 router.get('/title', async function(req, res, next) {
     const value = res.json(await getTitle(req.query.id));
-    // res.json(rows);
 });
 
 router.get('/bookid', async function(req, res, next) {
     const value = res.json(await getBookId(req.query.id));
-    // res.json(rows);
 });
 
+router.put('/update/books/:bookId', async function(req, res, next) {
+    return await updateBooks(req,res);
+});
+
+router.post('/add/single/newbook', async function(req, res, next) {
+    return await addSingleBook(req,res);
+});
 
 module.exports = router;
